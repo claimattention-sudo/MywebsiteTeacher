@@ -1,248 +1,284 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bright English — Репетитор по английскому — Репетитор по английскому</title>
+  <title>🌟 Здесь рождаются «A+»! — Bright English</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Bright, friendly English tutoring for all ages — lessons, exam prep, conversation classes.">
+  <meta name="description" content="Яркие и результативные занятия по английскому — разговор, грамматика, подготовка к экзаменам">
+
   <style>
     :root{
-      --bg1: #ff6b6b; /* coral */
-      --bg2: #f8c471; /* sunny */
-      --accent1: #6a82fb; /* electric blue */
-      --accent2: #a6ffcb; /* mint */
-      --glass: rgba(255,255,255,0.15);
-      --card: rgba(255,255,255,0.9);
-      --shadow: 0 10px 30px rgba(0,0,0,0.12);
-      --radius: 16px;
+      --c1: #ff3366; /* pink */
+      --c2: #ff6f3c; /* orange */
+      --c3: #ffd93d; /* yellow */
+      --c4: #6a82fb; /* blue accent */
+      --c5: #9bffea; /* mint */
+      --bg: linear-gradient(135deg,#fff5f7 0%, #fff9ee 40%, #f0fcff 100%);
+      --radius: 14px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0;
-      font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, var(--bg2), transparent 15%),
-                  radial-gradient(1000px 500px at 90% 90%, var(--bg1), transparent 18%),
-                  linear-gradient(135deg,#ffe7e7 0%, #fff8e1 40%, #f0f9ff 100%);
-      color:#123;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
+      margin:0;padding:28px;font-family: Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); color:#142;
     }
     .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:72px;height:72px;border-radius:16px;display:grid;place-items:center;font-weight:800;color:white;background:linear-gradient(135deg,var(--c4),var(--c5));box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+    h1{margin:0;font-family:Montserrat, sans-serif}
+    nav a{margin-left:12px;text-decoration:none;color:#123;font-weight:700}
 
-    header{
-      display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:28px
-    }
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{
-      width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font-weight:700;color:white;
-      background: conic-gradient(from 200deg at 50% 50%, var(--accent1), #9bffea, var(--accent2));
-      box-shadow: var(--shadow);
-    }
-    .brand h1{margin:0;font-family:'Montserrat',sans-serif;font-size:20px;background:linear-gradient(90deg,var(--accent1),#7df2b0);-webkit-background-clip:text;color:transparent}
-    nav a{margin-left:14px;text-decoration:none;color:#123;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:center;margin:28px 0}
+    .card{background:rgba(255,255,255,0.95);border-radius:var(--radius);padding:22px;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
+    .headline{font-size:34px;margin:0 0 12px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;background:linear-gradient(90deg,var(--c4),var(--c5));color:white}
 
-    .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px;
-    }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
-      border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
-      backdrop-filter: blur(6px);
-    }
-    .headline{font-family:'Montserrat',sans-serif;font-size:36px;margin:0 0 12px;line-height:1.05}
-    .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;margin-bottom:12px}
-    .lead{margin:0 0 18px;color:#234}
-    .cta-row{display:flex;gap:12px}
-    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),#8ef7ce);color:#052}
-    .btn-ghost{background:transparent;border:2px solid rgba(18,40,60,0.08)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .service{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#f7fff9);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 
-    .profile{
-      display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center
-    }
-    .avatar{width:160px;height:160px;border-radius:20px;display:grid;place-items:center;font-weight:800;color:#052;background:linear-gradient(180deg,#fff,#fff0);box-shadow:0 8px 30px rgba(106,130,251,0.18);border:6px solid rgba(255,255,255,0.6)}
-    .small{font-size:14px;color:#334}
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .avatar{width:150px;height:150px;border-radius:18px;display:grid;place-items:center;font-weight:900;background:linear-gradient(180deg,#fff,#fff0);border:6px solid rgba(255,255,255,0.7)}
 
-    /* Услуги grid */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .service{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85));box-shadow:0 8px 20px rgba(0,0,0,0.06);}
-    .service h3{margin:0 0 6px}
+    .decor-images{display:flex;gap:16px;margin-top:18px}
+    .decor-images img{width:140px;height:auto;border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,0.12)}
 
-    /* Testimonials */
-    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .test{padding:14px;border-radius:12px;background:linear-gradient(90deg,#fff,#f8fffb);}
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){body{padding:14px}.decor-images img{width:110px}}
 
-    /* Контакты */
-    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    input,textarea,select{padding:12px;border-radius:10px;border:2px solid rgba(0,0,0,0.06);font-size:14px}
-    textarea{grid-column:1 / -1;min-height:110px}
-
-    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .services{grid-template-columns:repeat(2,1fr)}
-      .testimonials{grid-template-columns:1fr}
-    }
-    @media (max-width:600px){
-      body{padding:18px}
-      header{flex-direction:column;align-items:flex-start}
-      .services{grid-template-columns:1fr}
-    }
-
-    /* Fun accents */
-    .sparkle{position:relative}
-    .sparkle:after{
-      content:'';position:absolute;right:-24px;top:-18px;width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg, #fff, var(--accent2));filter:blur(6px);opacity:0.9;transform:rotate(20deg);
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(8deg)}100%{transform:translateY(0) rotate(0)}}
-
-    /* subtle entrance */
-    .fade-in{animation:fadeUp .7s ease both}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
+    /* tiny utility for favicon preview in page */
+    .favicon-preview{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.18);display:grid;place-items:center;background:white}
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="fade-in">
+    <header>
       <div class="brand">
         <div class="logo">EN</div>
         <div>
-          <h1>Bright English</h1>
-          <div style="font-size:12px;color:#234">Дружелюбные уроки • Подготовка к экзаменам • Разговорная практика</div>
+          <h1>Bright English — Репетитор по английскому</h1>
+          <div style="font-size:13px;color:#345">Дружелюбные уроки • Подготовка к экзаменам • Разговорная практика</div>
         </div>
       </div>
       <nav>
         <a href="#services">Услуги</a>
         <a href="#about">О занятиях</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Контакты</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <div class="card fade-in">
-          <span class="tag">English Tutor</span>
+        <div class="card">
+          <span class="tag">Репетитор</span>
           <h2 class="headline">Говорите уверенно. Учитесь с удовольствием.</h2>
-          <p class="lead">Индивидуальные занятия для всех уровней: грамматика, разговорная речь, подготовка к экзаменам (IELTS, TOEFL), занятия для детей.</p>
-          <div class="cta-row">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Записаться на бесплатное знакомство</button>
-            <a class="btn btn-ghost" href="#services">Посмотреть занятия</a>
-          </div>
-
-          <div class="services" style="margin-top:18px">
-            <div class="service">
-              <h3>Индивидуальные занятия</h3>
-              <p class="small">Персональные уроки под ваши цели.</p>
-            </div>
-            <div class="service">
-              <h3>Разговорный клуб</h3>
-              <p class="small">Еженедельная разговорная практика в дружеской атмосфере.</p>
-            </div>
-            <div class="service">
-              <h3>Подготовка к экзаменам</h3>
-              <p class="small">Целенаправленная подготовка к IELTS, TOEFL и школьным экзаменам.</p>
-            </div>
+          <p>Индивидуальные занятия для всех уровней: грамматика, лексика, подготовка к экзаменам, разговорная практика и игровой формат для детей.</p>
+          <div class="services">
+            <div class="service"><strong>Грамматика</strong><div class="small">Ясно и понятно</div></div>
+            <div class="service"><strong>Лексика</strong><div class="small">Разговорные темы</div></div>
+            <div class="service"><strong>Игры</strong><div class="small">Квизы и мини‑игры</div></div>
           </div>
         </div>
 
-        <aside class="card profile fade-in sparkle">
+        <aside class="card profile">
           <div class="avatar">A</div>
-          <div style="font-weight:700">Anna Williams</div>
-          <div class="small">Квалифицированный преподаватель • Более 8 лет опыта</div>
-          <div style="font-size:13px;color:#345">Формат: онлайн и очно • Возраст: от 6 лет и старше</div>
+          <div style="font-weight:700">Анна Уильямс</div>
+          <div style="font-size:13px;color:#456">Квалифицированный преподаватель • 8+ лет опыта</div>
+          <div style="margin-top:12px;display:flex;gap:8px"><a class="btn" href="mailto:anna@brightenglish.example">Email</a><a class="btn" href="#contact">Позвонить</a></div>
 
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn" href="mailto:anna@brightenglish.example">Email</a>
-            <a class="btn" href="#contact">Call</a>
+          <div class="decor-images">
+            <img src="/mnt/data/Red_telephone_box_in_London.jpg" alt="Телефонная будка" onerror="this.style.display='none'">
+            <img src="/mnt/data/London_bus_route_11.jpg" alt="Автобус" onerror="this.style.display='none'">
           </div>
-
-          <div style="margin-top:14px;font-size:13px;color:#456">Рейтинг: ⭐⭐⭐⭐⭐ (150+ занятий)</div>
         </aside>
       </section>
 
-      <section id="about" class="card fade-in" style="margin-bottom:18px">
-        <h2 style="margin-top:0">О занятиях</h2>
-        <p class="small">Я создаю занятия, которые дают реальные результаты: разговорная практика, аудирование, грамматика и живые задания под ваш уровень.</p>
-
-        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
-          <div style="flex:1;min-width:220px" class="card">
-            <h3 style="margin-top:0">Дети и подростки</h3>
-            <p class="small">Игровые задания, фонетика и помощь по школьной программе.</p>
-          </div>
-          <div style="flex:1;min-width:220px" class="card">
-            <h3 style="margin-top:0">Взрослые</h3>
-            <p class="small">Разговорная речь, английский для работы, путешествий и повседневной жизни.</p>
-          </div>
-          <div style="flex:1;min-width:220px" class="card">
-            <h3 style="margin-top:0">Экзамены</h3>
-            <p class="small">Стратегия, тайминг и точечная обратная связь.</p>
-          </div>
-        </div>
+      <section id="about" class="card" style="margin-top:18px">
+        <h2>О занятиях</h2>
+        <p>Я делаю занятия живыми и эффективными — разговор, практические задания, подготовка к экзаменам и игровые элементы.</p>
       </section>
 
-      <section class="card fade-in" style="margin-bottom:18px">
-        <h2 style="margin-top:0">Отзывы учеников</h2>
-        <div class="testimonials">
-          <div class="test">
-            <strong>Maria, 17</strong>
-            <p class="small">"I improved my IELTS score by 2 bands in 3 months. Lessons are fun and super helpful!"</p>
-          </div>
-          <div class="test">
-            <strong>Tom, 32</strong>
-            <p class="small">"Anna helped me speak confidently at work. I recommend her 100%."</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="card fade-in">
-        <h2 style="margin-top:0">Связаться</h2>
-        <p class="small">Заполните форму ниже или напишите на почту <a href="mailto:anna@brightenglish.example">anna@brightenglish.example</a></p>
-        <form onsubmit="event.preventDefault(); alert('Thanks! I will reply within 24 hours.');">
-          <input type="text" name="name" placeholder="Ваше имя" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="text" name="phone" placeholder="Телефон / WhatsApp (необязательно)">
-          <select name="service">
-            <option value="private">Индивидуальное занятие</option>
-            <option value="group">Разговорный клуб</option>
-            <option value="exam">Подготовка к экзаменам</option>
-          </select>
-          <textarea name="message" placeholder="Расскажите о ваших целях..." required></textarea>
-          <button class="btn btn-primary" type="submit">Отправить сообщение</button>
-        </form>
-
-        <div style="margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-          <div class="small">Или запишитесь на бесплатное знакомство: <strong>calendly / booking link</strong></div>
-          <a class="btn btn-ghost" href="#">Ссылка на запись</a>
-        </div>
+      <section id="contact" class="card" style="margin-top:18px">
+        <h2>Контакты</h2>
+        <p>Напишите: <a href="mailto:anna@brightenglish.example">anna@brightenglish.example</a></p>
       </section>
 
     </main>
 
-    <footer>
-      <div style="font-size:13px;color:#456">© Bright English — Anna Williams</div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a href="#">Инстаграм</a>
-        <a href="#">Фейсбук</a>
-        <a href="#">Телеграм</a>
-      </div>
-    </footer>
+    <footer style="margin-top:24px;text-align:center;color:#666">© Bright English — Анна Уильямс</footer>
   </div>
 
+  <!-- SVG-in-DOM cube: used as source to render favicon (no external files). Visible for debugging only (display:none) -->
+  <div id="svg-source" style="position:absolute;left:-9999px;top:-9999px;">
+    <svg id="cube-svg" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" preserveAspectRatio="xMidYMid meet">
+      <!-- Faces will be generated by script for crisp scalable vector art -->
+    </svg>
+  </div>
+
+  <!-- preview on page (optional) -->
+  <div class="favicon-preview" title="🌟 Здесь рождаются «A+»!"></div>
+
   <script>
-    // small enhancement: smooth in-page links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-      const href = a.getAttribute('href');
-      if(href.length>1){
-        e.preventDefault(); document.querySelector(href).scrollIntoView({behavior:'smooth'});
-      }
-    }));
+  // Dynamic SVG cube favicon (SVG-in-DOM -> canvas -> favicon PNG) 
+  // - Six themed faces: Grammar, Lexis, Game, Conversation, Exam, Kids
+  // - Full rotation every 8 seconds
+  // - Uses inline SVG and renders to canvas for maximum browser compatibility (Chrome, FF, Edge, Safari, iOS)
+  // - Transparent background, crisp scaling
+
+  (function(){
+    const themes = [
+      {name:'Грамм', color:'#ff3366', label:'G'},
+      {name:'Лексика', color:'#ff6f3c', label:'L'},
+      {name:'Игра', color:'#ffd93d', label:'🎮'},
+      {name:'Разговор', color:'#6a82fb', label:'💬'},
+      {name:'Экзамен', color:'#9bffea', label:'✍️'},
+      {name:'Дети', color:'#a08cff', label:'⭐'}
+    ];
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.getElementById('cube-svg');
+
+    // 3D cube vertices
+    const size = 60;
+    const verts = [
+      [-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1], // back face
+      [-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]      // front face
+    ].map(v=>v.map(x=>x*size));
+
+    function rotateY(pt, ang){const c=Math.cos(ang), s=Math.sin(ang); const x=pt[0], y=pt[1], z=pt[2]; return [x*c+z*s, y, -x*s+z*c];}
+    function rotateX(pt, ang){const c=Math.cos(ang), s=Math.sin(ang); const x=pt[0], y=pt[1], z=pt[2]; return [x, y*c - z*s, y*s + z*c];}
+    function project(pt){ const [x,y,z]=pt; const f = 400/(400+z); return [x*f, y*f]; }
+
+    // faces as lists of vertex indices and assigned theme
+    const faces = [
+      {idx:[4,5,6,7], theme:0}, // front
+      {idx:[0,1,2,3], theme:1}, // back
+      {idx:[0,4,7,3], theme:2}, // left
+      {idx:[1,5,6,2], theme:3}, // right
+      {idx:[3,2,6,7], theme:4}, // top
+      {idx:[0,1,5,4], theme:5}  // bottom
+    ];
+
+    // create SVG face elements
+    function ensureFaces(){ svg.innerHTML='';
+      faces.forEach((f,i)=>{
+        const g = document.createElementNS(svgNS,'g');
+        g.setAttribute('data-face',i);
+        const poly = document.createElementNS(svgNS,'polygon');
+        poly.setAttribute('stroke','rgba(0,0,0,0.12)'); poly.setAttribute('stroke-width','2'); poly.setAttribute('fill',themes[f.theme].color);
+        const txt = document.createElementNS(svgNS,'text');
+        txt.setAttribute('text-anchor','middle'); txt.setAttribute('dominant-baseline','middle'); txt.setAttribute('font-size','22'); txt.setAttribute('font-family','sans-serif'); txt.setAttribute('fill','#072');
+        txt.textContent = themes[f.theme].label;
+        g.appendChild(poly); g.appendChild(txt); svg.appendChild(g);
+      });
+    }
+    ensureFaces();
+
+    // render loop: update SVG polygons positions based on rotation
+    const duration = 8000; // ms for full rotation
+    let last = performance.now();
+
+    function render(now){
+      const t = (now % duration)/duration; const ang = t * Math.PI*2; // rotate full
+      // rotate slightly on X for better 3D
+      const angX = Math.PI*0.18;
+
+      // compute projected points
+      const proj = verts.map(v=>project(rotateX(rotateY(v, ang), angX)));
+
+      // compute face depth for painter's algorithm
+      const faceDepth = faces.map((f, i)=>({i, z: f.idx.reduce((s,vi)=>s + (rotateX(rotateY(verts[vi], ang), angX)[2]),0)/4}));
+      faceDepth.sort((a,b)=>b.z - a.z); // far to near
+
+      // update SVG in painter order (clear and reappend)
+      // but we will set polygon points and text positions
+      faceDepth.forEach((fd, order)=>{
+        const f = faces[fd.i];
+        const g = svg.querySelector('[data-face="'+fd.i+'"]');
+        const poly = g.querySelector('polygon');
+        const txt = g.querySelector('text');
+        const pts = f.idx.map(ix=>{const p=proj[ix]; return (p[0]).toFixed(2)+','+(p[1]).toFixed(2)}).join(' ');
+        poly.setAttribute('points', pts);
+        // center text roughly at polygon average
+        const cx = f.idx.reduce((s,ix)=>s+proj[ix][0],0)/4;
+        const cy = f.idx.reduce((s,ix)=>s+proj[ix][1],0)/4;
+        txt.setAttribute('x', cx);
+        txt.setAttribute('y', cy);
+        // adjust fill for contrast
+        txt.setAttribute('fill', '#072');
+        // set fill opacity based on face orientation (simulate light)
+        const normalZ = computeFaceNormalZ(f.idx, ang, angX);
+        poly.setAttribute('fill-opacity', (0.6 + 0.4*Math.max(0, normalZ)).toString());
+      });
+
+      // after updating SVG, render to canvas and update favicon
+      updateFaviconFromSVG();
+
+      requestAnimationFrame(render);
+    }
+
+    function computeFaceNormalZ(idxArr, angY, angX){
+      // compute normal z component in view space for face
+      const a = rotateX(rotateY(verts[idxArr[0]], angY), angX);
+      const b = rotateX(rotateY(verts[idxArr[1]], angY), angX);
+      const c = rotateX(rotateY(verts[idxArr[2]], angY), angX);
+      const ux=[b[0]-a[0], b[1]-a[1], b[2]-a[2]];
+      const vx=[c[0]-a[0], c[1]-a[1], c[2]-a[2]];
+      const nx = ux[1]*vx[2]-ux[2]*vx[1];
+      const ny = ux[2]*vx[0]-ux[0]*vx[2];
+      const nz = ux[0]*vx[1]-ux[1]*vx[0];
+      const len = Math.hypot(nx,ny,nz)||1; return nz/len;
+    }
+
+    // Convert inline SVG to image and draw on canvas, then set favicon link
+    const canvas = document.createElement('canvas'); const sizePx = 256; canvas.width = canvas.height = sizePx; const ctx = canvas.getContext('2d');
+
+    function updateFaviconFromSVG(){
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const svg64 = btoa(unescape(encodeURIComponent(svgData)));
+      const img = new Image();
+      img.onload = function(){
+        ctx.clearRect(0,0,sizePx,sizePx);
+        // transparent background
+        ctx.drawImage(img, 0, 0, sizePx, sizePx);
+        try{ const url = canvas.toDataURL('image/png'); setFavicon(url); // also preview
+              const preview = document.querySelector('.favicon-preview'); preview.style.backgroundImage = `url(${url})`; preview.style.backgroundSize='cover'; }
+        catch(e){console.warn('favicon update failed',e)}
+      };
+      img.onerror = function(e){console.warn('svg->img load error', e)};
+      img.src = 'data:image/svg+xml;base64,'+svg64;
+    }
+
+    // set or replace link rel icons
+    function setFavicon(url){
+      try{
+        let link = document.querySelector('link[rel~="icon"]').cloneNode(true);
+        // if no existing, create
+        if(!link){ link = document.createElement('link'); link.rel = 'icon'; document.getElementsByTagName('head')[0].appendChild(link); }
+        link.href = url;
+        link.type = 'image/png';
+        // remove previous dynamic ones to avoid duplicates
+        document.querySelectorAll('link[rel~="icon"]').forEach(l=>{ l.parentNode.removeChild(l); });
+        document.head.appendChild(link);
+        // also set apple-touch-icon where supported
+        let apple = document.querySelector('link[rel="apple-touch-icon"]');
+        if(apple) apple.href = url; else { apple = document.createElement('link'); apple.rel='apple-touch-icon'; apple.href = url; apple.sizes='256x256'; document.head.appendChild(apple); }
+      }catch(e){console.warn('setFavicon error',e)}
+    }
+
+    // Start animation loop
+    requestAnimationFrame(render);
+
+    // Initial static favicon in case animation not ready
+    (function(){
+      const initialSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="100%" height="100%" rx="12" fill="#ff3366"/></svg>';
+      const url = 'data:image/svg+xml;base64,'+btoa(initialSVG);
+      const link = document.createElement('link'); link.rel='icon'; link.href=url; document.head.appendChild(link);
+    })();
+
+  })();
   </script>
+
 </body>
 </html>
