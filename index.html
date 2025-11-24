@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bright English — Репетитор по английскому — Репетитор по английскому</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Bright, friendly English tutoring for all ages — lessons, exam prep, conversation classes.">
+  <style>
+    :root{
+      --bg1: #ff6b6b; /* coral */
+      --bg2: #f8c471; /* sunny */
+      --accent1: #6a82fb; /* electric blue */
+      --accent2: #a6ffcb; /* mint */
+      --glass: rgba(255,255,255,0.15);
+      --card: rgba(255,255,255,0.9);
+      --shadow: 0 10px 30px rgba(0,0,0,0.12);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, var(--bg2), transparent 15%),
+                  radial-gradient(1000px 500px at 90% 90%, var(--bg1), transparent 18%),
+                  linear-gradient(135deg,#ffe7e7 0%, #fff8e1 40%, #f0f9ff 100%);
+      color:#123;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    header{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:28px
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font-weight:700;color:white;
+      background: conic-gradient(from 200deg at 50% 50%, var(--accent1), #9bffea, var(--accent2));
+      box-shadow: var(--shadow);
+    }
+    .brand h1{margin:0;font-family:'Montserrat',sans-serif;font-size:20px;background:linear-gradient(90deg,var(--accent1),#7df2b0);-webkit-background-clip:text;color:transparent}
+    nav a{margin-left:14px;text-decoration:none;color:#123;font-weight:600}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+      border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .headline{font-family:'Montserrat',sans-serif;font-size:36px;margin:0 0 12px;line-height:1.05}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;margin-bottom:12px}
+    .lead{margin:0 0 18px;color:#234}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),#8ef7ce);color:#052}
+    .btn-ghost{background:transparent;border:2px solid rgba(18,40,60,0.08)}
+
+    .profile{
+      display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center
+    }
+    .avatar{width:160px;height:160px;border-radius:20px;display:grid;place-items:center;font-weight:800;color:#052;background:linear-gradient(180deg,#fff,#fff0);box-shadow:0 8px 30px rgba(106,130,251,0.18);border:6px solid rgba(255,255,255,0.6)}
+    .small{font-size:14px;color:#334}
+
+    /* Услуги grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .service{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85));box-shadow:0 8px 20px rgba(0,0,0,0.06);}
+    .service h3{margin:0 0 6px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .test{padding:14px;border-radius:12px;background:linear-gradient(90deg,#fff,#f8fffb);}
+
+    /* Контакты */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,textarea,select{padding:12px;border-radius:10px;border:2px solid rgba(0,0,0,0.06);font-size:14px}
+    textarea{grid-column:1 / -1;min-height:110px}
+
+    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      body{padding:18px}
+      header{flex-direction:column;align-items:flex-start}
+      .services{grid-template-columns:1fr}
+    }
+
+    /* Fun accents */
+    .sparkle{position:relative}
+    .sparkle:after{
+      content:'';position:absolute;right:-24px;top:-18px;width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg, #fff, var(--accent2));filter:blur(6px);opacity:0.9;transform:rotate(20deg);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(8deg)}100%{transform:translateY(0) rotate(0)}}
+
+    /* subtle entrance */
+    .fade-in{animation:fadeUp .7s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="fade-in">
+      <div class="brand">
+        <div class="logo">EN</div>
+        <div>
+          <h1>Bright English</h1>
+          <div style="font-size:12px;color:#234">Дружелюбные уроки • Подготовка к экзаменам • Разговорная практика</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#about">О занятиях</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card fade-in">
+          <span class="tag">English Tutor</span>
+          <h2 class="headline">Говорите уверенно. Учитесь с удовольствием.</h2>
+          <p class="lead">Индивидуальные занятия для всех уровней: грамматика, разговорная речь, подготовка к экзаменам (IELTS, TOEFL), занятия для детей.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Записаться на бесплатное знакомство</button>
+            <a class="btn btn-ghost" href="#services">Посмотреть занятия</a>
+          </div>
+
+          <div class="services" style="margin-top:18px">
+            <div class="service">
+              <h3>Индивидуальные занятия</h3>
+              <p class="small">Персональные уроки под ваши цели.</p>
+            </div>
+            <div class="service">
+              <h3>Разговорный клуб</h3>
+              <p class="small">Еженедельная разговорная практика в дружеской атмосфере.</p>
+            </div>
+            <div class="service">
+              <h3>Подготовка к экзаменам</h3>
+              <p class="small">Целенаправленная подготовка к IELTS, TOEFL и школьным экзаменам.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card profile fade-in sparkle">
+          <div class="avatar">A</div>
+          <div style="font-weight:700">Anna Williams</div>
+          <div class="small">Квалифицированный преподаватель • Более 8 лет опыта</div>
+          <div style="font-size:13px;color:#345">Формат: онлайн и очно • Возраст: от 6 лет и старше</div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn" href="mailto:anna@brightenglish.example">Email</a>
+            <a class="btn" href="#contact">Call</a>
+          </div>
+
+          <div style="margin-top:14px;font-size:13px;color:#456">Рейтинг: ⭐⭐⭐⭐⭐ (150+ занятий)</div>
+        </aside>
+      </section>
+
+      <section id="about" class="card fade-in" style="margin-bottom:18px">
+        <h2 style="margin-top:0">О занятиях</h2>
+        <p class="small">Я создаю занятия, которые дают реальные результаты: разговорная практика, аудирование, грамматика и живые задания под ваш уровень.</p>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px" class="card">
+            <h3 style="margin-top:0">Дети и подростки</h3>
+            <p class="small">Игровые задания, фонетика и помощь по школьной программе.</p>
+          </div>
+          <div style="flex:1;min-width:220px" class="card">
+            <h3 style="margin-top:0">Взрослые</h3>
+            <p class="small">Разговорная речь, английский для работы, путешествий и повседневной жизни.</p>
+          </div>
+          <div style="flex:1;min-width:220px" class="card">
+            <h3 style="margin-top:0">Экзамены</h3>
+            <p class="small">Стратегия, тайминг и точечная обратная связь.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card fade-in" style="margin-bottom:18px">
+        <h2 style="margin-top:0">Отзывы учеников</h2>
+        <div class="testimonials">
+          <div class="test">
+            <strong>Maria, 17</strong>
+            <p class="small">"I improved my IELTS score by 2 bands in 3 months. Lessons are fun and super helpful!"</p>
+          </div>
+          <div class="test">
+            <strong>Tom, 32</strong>
+            <p class="small">"Anna helped me speak confidently at work. I recommend her 100%."</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card fade-in">
+        <h2 style="margin-top:0">Связаться</h2>
+        <p class="small">Заполните форму ниже или напишите на почту <a href="mailto:anna@brightenglish.example">anna@brightenglish.example</a></p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! I will reply within 24 hours.');">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Телефон / WhatsApp (необязательно)">
+          <select name="service">
+            <option value="private">Индивидуальное занятие</option>
+            <option value="group">Разговорный клуб</option>
+            <option value="exam">Подготовка к экзаменам</option>
+          </select>
+          <textarea name="message" placeholder="Расскажите о ваших целях..." required></textarea>
+          <button class="btn btn-primary" type="submit">Отправить сообщение</button>
+        </form>
+
+        <div style="margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <div class="small">Или запишитесь на бесплатное знакомство: <strong>calendly / booking link</strong></div>
+          <a class="btn btn-ghost" href="#">Ссылка на запись</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="font-size:13px;color:#456">© Bright English — Anna Williams</div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a href="#">Инстаграм</a>
+        <a href="#">Фейсбук</a>
+        <a href="#">Телеграм</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // small enhancement: smooth in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const href = a.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault(); document.querySelector(href).scrollIntoView({behavior:'smooth'});
+      }
+    }));
+  </script>
+</body>
+</html>
