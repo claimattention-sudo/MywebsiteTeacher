@@ -144,31 +144,14 @@
       color: #0b1d3a;
       font-weight: bold;
     }
-    .exam-card h3:nth-child(1)::before { background: var(--c1); }
-    .exam-card h3:nth-child(2)::before { background: var(--c2); }
-    .exam-card h3:nth-child(3)::before { background: var(--c3); }
+    .exam-card h3:nth-child(1)::before { content: '⚡'; background: var(--c3); }
+    .exam-card h3:nth-child(2)::before { content: '🌟'; background: var(--c1); }
+    .exam-card h3:nth-child(3)::before { content: '💫'; background: var(--c5); }
 
-    .exam-card .goal {
-      font-weight: 700;
-      color: #4fc3f7;
-      margin: 12px 0 6px 0;
-    }
     .exam-card .method {
       color: #c2d8ff;
       margin: 8px 0;
       line-height: 1.5;
-    }
-    .exam-card .result {
-      color: #a8c4ff;
-      margin-top: 12px;
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .exam-card .result::before {
-      content: '→';
-      font-weight: bold;
     }
 
     /* Контакты — тоже карточка */
@@ -190,8 +173,22 @@
       .decor-images img{width:110px}
     }
 
-    /* tiny utility for favicon preview in page */
-    .favicon-preview{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);display:grid;place-items:center;background:white}
+    /* ✨ Куб-превью — по центру, 96×96px */
+    .favicon-preview{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:96px;
+      height:96px;
+      border-radius:16px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.4);
+      background:white;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      display:block;
+      z-index: 1000;
+    }
 
     /* ✨ Кастомный курсор: звезда с искрами */
     * { cursor: none !important; }
@@ -243,8 +240,8 @@
       <div class="brand">
         <div class="logo">EN</div>
         <div>
-          <h1>Звёздный путь к высоким баллам</h1>
-          <div style="font-size:13px;color:#a8c4ff">Подготовка к экзаменам • Разговорная практика</div>
+          <h1>Звёздный путь к высоким баллам 🌠</h1>
+          <div style="font-size:13px;color:#a8c4ff">Здесь начинается ваш успех</div>
         </div>
       </div>
       <nav>
@@ -257,8 +254,8 @@
     <main>
       <section class="hero">
         <div class="card">
-          <span class="tag">Английский для детей</span>
-          <h2 class="headline">Помогаю прийти к высокому результату с заботой о каждом ученике</h2>
+          <span class="tag">✨ Английский для детей</span>
+          <h2 class="headline">Каждый ученик — звёздочка, которая может засиять ярко ✨</h2>
           <p>Индивидуальные занятия для всех уровней: грамматика, лексика, подготовка к экзаменам, разговорная практика и игровой формат для детей.</p>
           <div class="services">
             <div class="service"><strong>Грамматика</strong><div class="small">Ясно и понятно</div></div>
@@ -290,37 +287,28 @@
       </section>
 
       <section id="about" class="card" style="margin-top:18px">
-        <h2>О занятиях</h2>
-        <p>Готовлю к экзаменам легко и интересно — через понимание, а не зубрёжку.</p>
+        <h2>Три этапа звёздного роста</h2>
+        <p>Звёзды не загораются мгновенно. Мы сопровождаем каждый этап — чтобы свет не погас, а раскрылся.</p>
 
-        <!-- Карточка ЕГЭ -->
+        <!-- Карточка 1 -->
         <div class="exam-card">
-          <h3>🎯 ЕГЭ: 80+ баллов</h3>
-          <div class="goal">Цель:</div>
-          <div class="method">Сдать часть С без стресса, не теряя баллы на «глупых» ошибках.</div>
-          <div class="goal">Как:</div>
-          <div class="method">Разбор сложных заданий (37–43), стратегии распределения времени, тренировка внимания.</div>
-          <div class="result">Уверенность в части С, меньше «глупых» ошибок</div>
+          <h3>⚡ Подготовка к старту во 2 классе</h3>
+          <div class="method">Когда звезда только формируется — она ещё не светит, но уже набирает силу.</div>
+          
         </div>
 
-        <!-- Карточка ОГЭ -->
+        <!-- Карточка 2 -->
         <div class="exam-card">
-          <h3>🎓 ОГЭ: «пятёрка» без нервов</h3>
-          <div class="goal">Цель:</div>
-          <div class="method">Защита устной части — как разговор с другом.</div>
-          <div class="goal">Как:</div>
-          <div class="method">Отработка формата, типичные ловушки, устная часть «на автомате».</div>
-          <div class="result">Защита устного — как разговор с другом</div>
+          <h3>🌟 Помощь со школьным английским</h3>
+          <div class="method">Звезда уже горит — но ей нужна поддержка, чтобы не мерцать, а светить ровно.</div>
+         
         </div>
 
-        <!-- Карточка ВПР -->
+        <!-- Карточка 3 -->
         <div class="exam-card">
-          <h3>📚 ВПР: первый шаг к успеху</h3>
-          <div class="goal">Цель:</div>
-          <div class="method">Ребёнок хочет готовиться — и гордится результатом.</div>
-          <div class="goal">Как:</div>
-          <div class="method">Игровые тренировки, мини-квизы, визуальные схемы.</div>
-          <div class="result">Ребёнок хочет готовиться — и гордится результатом</div>
+          <h3>💫 Подготовка к ВПР</h3>
+          <div class="method">Первый официальный экзамен — как первая вспышка звезды. Маленькая, но — настоящая!</div>
+         
         </div>
       </section>
 
@@ -341,7 +329,7 @@
     </svg>
   </div>
 
-  <!-- preview on page (optional) -->
+  <!-- ✨ Куб-превью — по центру -->
   <div class="favicon-preview" title="🌟 Здесь рождаются «A+»!"></div>
 
   <!-- ✨ Курсор-звезда с мерцанием + искры -->
@@ -441,14 +429,8 @@
     })();
   </script>
 
-  <!-- 🎯 ВОССТАНОВЛЕННЫЙ ДИНАМИЧЕСКИЙ КУБ В FAVICON -->
+  <!-- 🎯 ВОССТАНОВЛЕННЫЙ ДИНАМИЧЕСКИЙ КУБ — favicon + центральное превью -->
   <script>
-  // Dynamic SVG cube favicon (SVG-in-DOM -> canvas -> favicon PNG) 
-  // - Six themed faces: Grammar, Lexis, Game, Conversation, Exam, Kids
-  // - Full rotation every 8 seconds
-  // - Uses inline SVG and renders to canvas for maximum browser compatibility (Chrome, FF, Edge, Safari, iOS)
-  // - Transparent background, crisp scaling
-
   (function(){
     const themes = [
       {name:'Грамм', color:'#ff3366', label:'G'},
@@ -462,28 +444,25 @@
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.getElementById('cube-svg');
 
-    // 3D cube vertices
     const size = 60;
     const verts = [
-      [-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1], // back face
-      [-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]      // front face
+      [-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],
+      [-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]
     ].map(v=>v.map(x=>x*size));
 
     function rotateY(pt, ang){const c=Math.cos(ang), s=Math.sin(ang); const x=pt[0], y=pt[1], z=pt[2]; return [x*c+z*s, y, -x*s+z*c];}
-    function rotateX(pt, ang){const c=Math.cos(ang), s=Math.sin(ang); const x=pt[0], y=pt[1], z=pt[2]; return [x, y*c - z*s, y*s + z*c];}
+    function rotateX(pt, ang){const c=Math.cos(ang), s=Math.sin(ang); return [pt[0], pt[1]*c - pt[2]*s, pt[1]*s + pt[2]*c];}
     function project(pt){ const [x,y,z]=pt; const f = 400/(400+z); return [x*f, y*f]; }
 
-    // faces as lists of vertex indices and assigned theme
     const faces = [
-      {idx:[4,5,6,7], theme:0}, // front
-      {idx:[0,1,2,3], theme:1}, // back
-      {idx:[0,4,7,3], theme:2}, // left
-      {idx:[1,5,6,2], theme:3}, // right
-      {idx:[3,2,6,7], theme:4}, // top
-      {idx:[0,1,5,4], theme:5}  // bottom
+      {idx:[4,5,6,7], theme:0},
+      {idx:[0,1,2,3], theme:1},
+      {idx:[0,4,7,3], theme:2},
+      {idx:[1,5,6,2], theme:3},
+      {idx:[3,2,6,7], theme:4},
+      {idx:[0,1,5,4], theme:5}
     ];
 
-    // create SVG face elements
     function ensureFaces(){ svg.innerHTML='';
       faces.forEach((f,i)=>{
         const g = document.createElementNS(svgNS,'g');
@@ -498,51 +477,8 @@
     }
     ensureFaces();
 
-    // render loop: update SVG polygons positions based on rotation
-    const duration = 8000; // ms for full rotation
-    let last = performance.now();
-
-    function render(now){
-      const t = (now % duration)/duration; const ang = t * Math.PI*2; // rotate full
-      // rotate slightly on X for better 3D
-      const angX = Math.PI*0.18;
-
-      // compute projected points
-      const proj = verts.map(v=>project(rotateX(rotateY(v, ang), angX)));
-
-      // compute face depth for painter's algorithm
-      const faceDepth = faces.map((f, i)=>({i, z: f.idx.reduce((s,vi)=>s + (rotateX(rotateY(verts[vi], ang), angX)[2]),0)/4}));
-      faceDepth.sort((a,b)=>b.z - a.z); // far to near
-
-      // update SVG in painter order (clear and reappend)
-      // but we will set polygon points and text positions
-      faceDepth.forEach((fd, order)=>{
-        const f = faces[fd.i];
-        const g = svg.querySelector('[data-face="'+fd.i+'"]');
-        const poly = g.querySelector('polygon');
-        const txt = g.querySelector('text');
-        const pts = f.idx.map(ix=>{const p=proj[ix]; return (p[0]).toFixed(2)+','+(p[1]).toFixed(2)}).join(' ');
-        poly.setAttribute('points', pts);
-        // center text roughly at polygon average
-        const cx = f.idx.reduce((s,ix)=>s+proj[ix][0],0)/4;
-        const cy = f.idx.reduce((s,ix)=>s+proj[ix][1],0)/4;
-        txt.setAttribute('x', cx);
-        txt.setAttribute('y', cy);
-        // adjust fill for contrast
-        txt.setAttribute('fill', '#072');
-        // set fill opacity based on face orientation (simulate light)
-        const normalZ = computeFaceNormalZ(f.idx, ang, angX);
-        poly.setAttribute('fill-opacity', (0.6 + 0.4*Math.max(0, normalZ)).toString());
-      });
-
-      // after updating SVG, render to canvas and update favicon
-      updateFaviconFromSVG();
-
-      requestAnimationFrame(render);
-    }
-
+    const duration = 8000;
     function computeFaceNormalZ(idxArr, angY, angX){
-      // compute normal z component in view space for face
       const a = rotateX(rotateY(verts[idxArr[0]], angY), angX);
       const b = rotateX(rotateY(verts[idxArr[1]], angY), angX);
       const c = rotateX(rotateY(verts[idxArr[2]], angY), angX);
@@ -554,52 +490,66 @@
       const len = Math.hypot(nx,ny,nz)||1; return nz/len;
     }
 
-    // Convert inline SVG to image and draw on canvas, then set favicon link
-    const canvas = document.createElement('canvas'); const sizePx = 256; canvas.width = canvas.height = sizePx; const ctx = canvas.getContext('2d');
+    const canvas = document.createElement('canvas'); 
+    canvas.width = canvas.height = 256; 
+    const ctx = canvas.getContext('2d');
 
     function updateFaviconFromSVG(){
       const svgData = new XMLSerializer().serializeToString(svg);
       const svg64 = btoa(unescape(encodeURIComponent(svgData)));
       const img = new Image();
       img.onload = function(){
-        ctx.clearRect(0,0,sizePx,sizePx);
-        // transparent background
-        ctx.drawImage(img, 0, 0, sizePx, sizePx);
-        try{ const url = canvas.toDataURL('image/png'); setFavicon(url); // also preview
-              const preview = document.querySelector('.favicon-preview'); preview.style.backgroundImage = `url(${url})`; preview.style.backgroundSize='cover'; }
-        catch(e){console.warn('favicon update failed',e)}
+        ctx.clearRect(0,0,256,256);
+        ctx.drawImage(img, 0, 0, 256, 256);
+        try{
+          const url = canvas.toDataURL('image/png');
+          // ✅ Обновляем favicon
+          let link = document.querySelector('link[rel~="icon"]');
+          if(!link){ link = document.createElement('link'); link.rel = 'icon'; document.head.appendChild(link); }
+          link.href = url;
+          link.type = 'image/png';
+          document.querySelectorAll('link[rel~="icon"]').forEach(l=>l.parentNode.removeChild(l));
+          document.head.appendChild(link);
+          // ✅ Обновляем ПРЕВЬЮ — с центрированием и масштабированием
+          const preview = document.querySelector('.favicon-preview');
+          if (preview) {
+            preview.style.backgroundImage = `url(${url})`;
+            preview.style.backgroundSize = 'contain';
+            preview.style.backgroundPosition = 'center';
+          }
+        }catch(e){console.warn('favicon update failed',e)}
       };
       img.onerror = function(e){console.warn('svg->img load error', e)};
       img.src = 'data:image/svg+xml;base64,'+svg64;
     }
 
-    // set or replace link rel icons
-    function setFavicon(url){
-      try{
-        let link = document.querySelector('link[rel~="icon"]').cloneNode(true);
-        // if no existing, create
-        if(!link){ link = document.createElement('link'); link.rel = 'icon'; document.getElementsByTagName('head')[0].appendChild(link); }
-        link.href = url;
-        link.type = 'image/png';
-        // remove previous dynamic ones to avoid duplicates
-        document.querySelectorAll('link[rel~="icon"]').forEach(l=>{ l.parentNode.removeChild(l); });
-        document.head.appendChild(link);
-        // also set apple-touch-icon where supported
-        let apple = document.querySelector('link[rel="apple-touch-icon"]');
-        if(apple) apple.href = url; else { apple = document.createElement('link'); apple.rel='apple-touch-icon'; apple.href = url; apple.sizes='256x256'; document.head.appendChild(apple); }
-      }catch(e){console.warn('setFavicon error',e)}
-    }
-
-    // Start animation loop
-    requestAnimationFrame(render);
-
-    // Initial static favicon in case animation not ready
     (function(){
       const initialSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="100%" height="100%" rx="12" fill="#ff3366"/></svg>';
       const url = 'image/svg+xml;base64,'+btoa(initialSVG);
       const link = document.createElement('link'); link.rel='icon'; link.href=url; document.head.appendChild(link);
     })();
 
+    function render(now){
+      const t = (now % duration)/duration; const ang = t * Math.PI*2; const angX = Math.PI*0.18;
+      const proj = verts.map(v=>project(rotateX(rotateY(v, ang), angX)));
+      const faceDepth = faces.map((f,i)=>({i, z: f.idx.reduce((s,vi)=>s + (rotateX(rotateY(verts[vi], ang), angX)[2]),0)/4}))
+                           .sort((a,b)=>b.z - a.z);
+      faceDepth.forEach(fd=>{
+        const f = faces[fd.i], g = svg.querySelector('[data-face="'+fd.i+'"]');
+        const poly = g.querySelector('polygon'), txt = g.querySelector('text');
+        const pts = f.idx.map(ix=>{const p=proj[ix]; return (p[0]).toFixed(2)+','+(p[1]).toFixed(2)}).join(' ');
+        poly.setAttribute('points', pts);
+        const cx = f.idx.reduce((s,ix)=>s+proj[ix][0],0)/4;
+        const cy = f.idx.reduce((s,ix)=>s+proj[ix][1],0)/4;
+        txt.setAttribute('x', cx); txt.setAttribute('y', cy);
+        txt.setAttribute('fill', '#072');
+        const normalZ = computeFaceNormalZ(f.idx, ang, angX);
+        poly.setAttribute('fill-opacity', (0.6 + 0.4*Math.max(0, normalZ)).toString());
+      });
+      updateFaviconFromSVG();
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
   })();
   </script>
 
