@@ -18,10 +18,40 @@
       --radius: 14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%; margin:0; padding:0;}
     body{
-      margin:0;padding:28px;font-family: Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); color:#e6f0ff;
+      margin:0;padding:28px;font-family: Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: linear-gradient(135deg, #1a1e3a 0%, #2a235a 40%, #1c2d6a 100%);
+      color:#e6f0ff;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    /* ✨ Анимированные звёздочки на фоне */
+    .star-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .star {
+      position: absolute;
+      opacity: 0.6;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
+      transition: transform 0.3s ease;
+    }
+    .star svg {
+      fill: currentColor;
+      stroke: currentColor;
+      stroke-width: 0.5;
+      filter: drop-shadow(0 0 2px rgba(255,255,255,0.5));
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); filter: brightness(0.8); }
+      50% { opacity: 1; transform: scale(1.2) rotate(10deg); filter: brightness(1.4) hue-rotate(10deg); }
+    }
+
     .container{max-width:1100px;margin:0 auto}
     header{display:flex;align-items:center;justify-content:space-between;gap:18px}
     .brand{display:flex;gap:12px;align-items:center}
@@ -31,24 +61,33 @@
     nav a:hover{color:#ffeb3b;text-decoration:underline}
 
     .hero{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:center;margin:28px 0}
-    .card{background:rgba(18,38,70,0.85);border-radius:var(--radius);padding:22px;box-shadow:0 8px 32px rgba(0,0,0,0.35);backdrop-filter:blur(8px);border:1px solid rgba(90,130,200,0.2);transition: transform 0.2s ease, box-shadow 0.2s ease;}
+    .card{
+      background:rgba(25,20,60,0.75);
+      backdrop-filter: blur(12px);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.4);
+      border:1px solid rgba(126,87,194,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     }
     .headline{font-size:34px;margin:0 0 12px;color:#ffffff}
     .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;background:linear-gradient(90deg,var(--c4),var(--c5));color:white}
 
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .service{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(30,50,90,0.6),rgba(20,40,80,0.6));box-shadow:0 6px 18px rgba(0,0,0,0.2);color:#c2d8ff;transition: transform 0.2s ease, box-shadow 0.2s ease;}
+    .service{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(30,20,70,0.7),rgba(25,15,60,0.7));box-shadow:0 6px 18px rgba(0,0,0,0.25);color:#c2d8ff;transition: transform 0.2s ease, box-shadow 0.2s ease;}
     .service:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     }
     .service strong{color:#ffffff}
 
     .profile{display:flex;flex-direction:column;align-items:center;gap:12px}
-    .avatar{width:150px;height:150px;border-radius:18px;position:relative;display:flex;justify-content:center;align-items:center;font-weight:900;background:linear-gradient(180deg,#1c3c6c,#132a4d);color:white;border:6px solid rgba(126,87,194,0.4)}
+    .avatar{width:150px;height:150px;border-radius:18px;position:relative;display:flex;justify-content:center;align-items:center;font-weight:900;background:linear-gradient(180deg,#2a235a,#1c2d6a);color:white;border:6px solid rgba(126,87,194,0.4)}
     .avatar img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block}
 
     .decor-images{display:flex;gap:16px;margin-top:18px}
@@ -142,8 +181,14 @@
     }
 
     /* responsive */
-    @media (max-width:980px){.hero{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){body{padding:14px}.decor-images img{width:110px}}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      body{padding:14px}
+      .decor-images img{width:110px}
+    }
 
     /* tiny utility for favicon preview in page */
     .favicon-preview{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);display:grid;place-items:center;background:white}
@@ -190,6 +235,9 @@
   </style>
 </head>
 <body>
+  <!-- ✨ Фоновые звёздочки -->
+  <div class="star-bg" id="star-bg"></div>
+
   <div class="container">
     <header>
       <div class="brand">
@@ -210,7 +258,7 @@
       <section class="hero">
         <div class="card">
           <span class="tag">Английский для детей</span>
-          <h2 class="headline">Говорите уверенно. Учитесь с удовольствием.</h2>
+          <h2 class="headline">Помогаю прийти к высокому результату с заботой о каждом ученике</h2>
           <p>Индивидуальные занятия для всех уровней: грамматика, лексика, подготовка к экзаменам, разговорная практика и игровой формат для детей.</p>
           <div class="services">
             <div class="service"><strong>Грамматика</strong><div class="small">Ясно и понятно</div></div>
@@ -221,7 +269,11 @@
 
         <aside class="card profile">
           <div class="avatar">
-            <img src="https://i.postimg.cc/QM6FF3WD/me-1.png" alt="Мария" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;font-weight:900;color:white&quot;>М</div>'">
+            <img 
+              src="https://i.postimg.cc/QM6FF3WD/me-1.png" 
+              alt="Мария" 
+              onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;display:grid;place-items:center;font-weight:900;color:white&quot;>М</div>'"
+            >
           </div>
           <div style="font-weight:700;color:#ffffff">Мария</div>
           <div style="font-size:13px;color:#a8c4ff">Ваш преподаватель английского языка</div>
@@ -340,27 +392,56 @@
 
   <!-- 🌟 Горящая звезда при наведении на вкладку -->
   <script>
-    // Создаём элемент
     const hoverStar = document.createElement('div');
     hoverStar.className = 'hover-star';
     hoverStar.textContent = '✨';
     document.body.appendChild(hoverStar);
 
-    // При наведении на вкладку — показываем звезду
-    document.addEventListener('mouseenter', () => {
-      hoverStar.style.opacity = '1';
-    });
-    document.addEventListener('mouseleave', () => {
-      hoverStar.style.opacity = '0';
-    });
+    document.addEventListener('mouseenter', () => hoverStar.style.opacity = '1');
+    document.addEventListener('mouseleave', () => hoverStar.style.opacity = '0');
 
-    // Анимация мерцания звезды
     setInterval(() => {
       const pulse = 0.7 + 0.3 * Math.sin(Date.now() * 0.002);
       hoverStar.style.transform = `scale(${pulse})`;
     }, 50);
   </script>
 
+  <!-- 🌌 Генерация фоновых звёздочек (SVG-звёзды) -->
+  <script>
+    (function() {
+      const starBg = document.getElementById('star-bg');
+      const colors = ['#ff4da6', '#ff8a65', '#ffeb3b', '#7e57c2', '#4fc3f7', '#a08cff', '#ffd166'];
+      const numStars = 50;
+
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+
+        const size = Math.random() * 8 + 4;
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const delay = Math.random() * 5;
+
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${left}%`;
+        star.style.top = `${top}%`;
+        star.style.color = color;
+        star.style.animation = `twinkle 3s ease-in-out ${delay}s infinite`;
+
+        star.innerHTML = `
+          <svg width="${size}" height="${size}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.3 8.5L21 9L16 13.5L17.5 20L12 17L6.5 20L8 13.5L3 9L9.7 8.5Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"/>
+          </svg>
+        `;
+
+        starBg.appendChild(star);
+      }
+    })();
+  </script>
+
+  <!-- 🎯 ВОССТАНОВЛЕННЫЙ ДИНАМИЧЕСКИЙ КУБ В FAVICON -->
   <script>
   // Dynamic SVG cube favicon (SVG-in-DOM -> canvas -> favicon PNG) 
   // - Six themed faces: Grammar, Lexis, Game, Conversation, Exam, Kids
